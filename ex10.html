@@ -8,8 +8,8 @@
 </head>
 <body>
   <h1>Sistema Avançado de Multas - 2023</h1>
-  <p>Este é um sistema super avançado, com tecnologias de ultimo nivel.</p>
-  Velocidade do veiculo <input type="number" name="txtvel" id="txtvel"> Km/h.
+  <p>Este é um sistema super avançado, com tecnologias de último nível.</p>
+  Velocidade do veículo <input type="number" name="txtvel" id="txtvel"> Km/h.
   <input type="button" value="Verificar" onclick="calcular()">
   <div id="res">
 
@@ -17,15 +17,19 @@
 
 
   <script>
-      //var vel = window.document.querySelector('input#txtvel')  
-      //pode usar o window.document.getElementById('input#velocidade') também
     function calcular(){
-      var txtv = window.document.querySelector('input#txtvel') // vai pegar o valor da input velocidade ( bloco de texto)
-      var res = window.document.querySelector('div#res') //puxando o id da DIV res
-      var vel = Number(txtv.value) //vai pegar a velocidade e jogar dentro da variavel "velo"
-      res.innerHtml = '<p>Sua velocidade é de ${vel} Km/h.</p>'
+      var txtv = window.document.querySelector('input#txtvel'); // Seleciona o elemento de entrada de texto pelo ID
+      var res = window.document.querySelector('div#res'); // Seleciona a div de resultado pelo ID
+      var vel = Number(txtv.value); // Converte o valor do campo de texto em um número
+      res.innerHTML = `<p>Sua velocidade é de ${vel} Km/h.</p>`; // Exibe a mensagem com a velocidade
+
+      // Verifica se a velocidade é maior que 60 Km/h
+      if(vel > 60){
+        res.innerHTML += `<p>Você foi <strong>MULTADO!</strong>, tenha mais cuidado enquanto estiver conduzindo um veículo.</p>`;
+      }
+
+      res.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`; // Exibe a mensagem final
     }
   </script>
 </body>
 </html>
-
